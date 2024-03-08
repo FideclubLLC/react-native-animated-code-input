@@ -1,6 +1,6 @@
 import React, { useCallback, useRef } from "react";
 
-import { View, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+import { View, TextInput, TouchableOpacity, StyleSheet, Text } from "react-native";
 
 import InputSingleItem, { ICodeInputProps } from "./InputSingleItem";
 import InputField, { IInputProps } from "./InputField";
@@ -16,12 +16,7 @@ const AnimatedCodeInput: React.FC<IProps> = (props: IProps) => {
 
   const renderItem = useCallback(
     (index: number) => (
-      <InputSingleItem
-        {...props}
-        value={value}
-        key={`InputSingleItem ${index}`}
-        index={index}
-      />
+      <Text>{value}</Text>
     ),
     [value, props]
   );
