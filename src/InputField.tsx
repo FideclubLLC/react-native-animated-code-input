@@ -96,9 +96,8 @@ const InputField: React.FC<IProps> = (props: IProps) => {
 
   return (
     <TextInput
-      autoFocus={autoFocus || true}
+      autoFocus={false}
       caretHidden={true}
-      keyboardType="number-pad"
       onBlur={onBlurCallback}
       onChangeText={onChangeTextCallback}
       maxLength={codeMaxLength}
