@@ -27,7 +27,7 @@ const AnimatedCodeInput: React.FC<IProps> = (props: IProps) => {
   );
 
   const onPressCode = useCallback(() => {
-    animatedCodeInputRef.current?.focus();
+    // animatedCodeInputRef.current?.focus();
   }, [animatedCodeInputRef]);
 
   const onSubmit = useCallback(() => {
