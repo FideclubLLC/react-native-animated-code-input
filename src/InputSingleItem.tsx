@@ -190,7 +190,7 @@ export const InputSingleItem: React.FC<ICodeInputProps> = (
       }
       key={`code-field ${index ? index : 0}`}
     >
-      <Animated.View
+      <View
         style={{
           opacity: animatedValue,
         }}
@@ -210,9 +210,9 @@ export const InputSingleItem: React.FC<ICodeInputProps> = (
         >
           {textValue}
         </Text>
-      </Animated.View>
+      </View>
       {textValue.length === 0 && value.length === index && (
-        <Animated.View
+        <View
           style={{
             opacity: animatedValueCursor,
           }}
@@ -220,7 +220,7 @@ export const InputSingleItem: React.FC<ICodeInputProps> = (
           <Text style={[styles.cursor, cursorStyle, cursorStyle?.customStyle]}>
             {"|"}
           </Text>
-        </Animated.View>
+        </View>
       )}
     </View>
   );
