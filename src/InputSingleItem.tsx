@@ -191,9 +191,7 @@ export const InputSingleItem: React.FC<ICodeInputProps> = (
       key={`code-field ${index ? index : 0}`}
     >
       <View
-        style={{
-          opacity: animatedValue,
-        }}
+        style={{}}
       >
         <Text
           style={[
@@ -213,9 +211,7 @@ export const InputSingleItem: React.FC<ICodeInputProps> = (
       </View>
       {textValue.length === 0 && value.length === index && (
         <View
-          style={{
-            opacity: animatedValueCursor,
-          }}
+          style={{}}
         >
           <Text style={[styles.cursor, cursorStyle, cursorStyle?.customStyle]}>
             {"|"}
