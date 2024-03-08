@@ -20,6 +20,7 @@ const AnimatedCodeInput: React.FC<IProps> = (props: IProps) => {
     ),
     [value, props]
   );
+  console.log('edited');
 
   const onPressCode = useCallback(() => {
     // animatedCodeInputRef.current?.focus();
