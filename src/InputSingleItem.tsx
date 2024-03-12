@@ -111,25 +111,25 @@ export const InputSingleItem: React.FC<ICodeInputProps> = (
   //   }).start();
   // }, [animatedValue, codeAnimationDuration]);
 
-  // const startCursor = useCallback(() => {
-  //   Animated.timing(animatedValueCursor, {
-  //     toValue: 1,
-  //     duration: cursorAnimationDuration
-  //       ? cursorAnimationDuration
-  //       : CURSOR_ANIMATION_DURATION,
-  //     useNativeDriver: true,
-  //   }).start(() => {
-  //     Animated.timing(animatedValueCursor, {
-  //       toValue: 0,
-  //       duration: cursorAnimationDuration
-  //         ? cursorAnimationDuration
-  //         : CURSOR_ANIMATION_DURATION,
-  //       useNativeDriver: true,
-  //     }).start(() => {
-  //       startCursor();
-  //     });
-  //   });
-  // }, [animatedValueCursor, cursorAnimationDuration]);
+  const startCursor = useCallback(() => {
+    Animated.timing(animatedValueCursor, {
+      toValue: 1,
+      duration: cursorAnimationDuration
+        ? cursorAnimationDuration
+        : CURSOR_ANIMATION_DURATION,
+      useNativeDriver: true,
+    }).start(() => {
+      Animated.timing(animatedValueCursor, {
+        toValue: 0,
+        duration: cursorAnimationDuration
+          ? cursorAnimationDuration
+          : CURSOR_ANIMATION_DURATION,
+        useNativeDriver: true,
+      }).start(() => {
+        startCursor();
+      });
+    });
+  }, [animatedValueCursor, cursorAnimationDuration]);
 
   // const resetAnimationAfterDelete = useCallback(() => {
   //   setAnimatedValueCursor(new Animated.Value(0));
