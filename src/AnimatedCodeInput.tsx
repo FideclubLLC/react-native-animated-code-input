@@ -20,7 +20,6 @@ const AnimatedCodeInput: React.FC<IProps> = (props: IProps) => {
     ),
     [value, props]
   );
-  console.log('edited');
 
   const onPressCode = useCallback(() => {
     // animatedCodeInputRef.current?.focus();
@@ -43,7 +42,7 @@ const AnimatedCodeInput: React.FC<IProps> = (props: IProps) => {
             .map((_item, index) => renderItem(index))}
         </View>
       </TouchableOpacity>
-      <InputField
+      {/* <InputField
         {...props}
         textInputRef={animatedCodeInputRef}
         onChangeText={onChangeText}
@@ -52,7 +51,7 @@ const AnimatedCodeInput: React.FC<IProps> = (props: IProps) => {
         value={value}
         testID={"Animated_Code_Input"}
         onSubmit={onSubmit}
-      />
+      /> */}
     </>
   );
 };
