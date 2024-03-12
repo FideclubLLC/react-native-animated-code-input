@@ -16,7 +16,12 @@ const AnimatedCodeInput: React.FC<IProps> = (props: IProps) => {
 
   const renderItem = useCallback(
     (index: number) => (
-      <Text>{value}</Text>
+      <InputSingleItem
+        {...props}
+        value={value}
+        key={`InputSingleItem ${index}`}
+        index={index}
+      />
     ),
     [value, props]
   );
@@ -42,7 +47,7 @@ const AnimatedCodeInput: React.FC<IProps> = (props: IProps) => {
             .map((_item, index) => renderItem(index))}
         </View>
       </TouchableOpacity>
-      {/* <InputField
+      <InputField
         {...props}
         textInputRef={animatedCodeInputRef}
         onChangeText={onChangeText}
@@ -51,7 +56,7 @@ const AnimatedCodeInput: React.FC<IProps> = (props: IProps) => {
         value={value}
         testID={"Animated_Code_Input"}
         onSubmit={onSubmit}
-      /> */}
+      />
     </>
   );
 };
