@@ -101,15 +101,15 @@ export const InputSingleItem: React.FC<ICodeInputProps> = (
     afterInputDelay,
   } = props;
 
-  // const start = useCallback(() => {
-  //   Animated.timing(animatedValue, {
-  //     toValue: 1,
-  //     duration: codeAnimationDuration
-  //       ? codeAnimationDuration
-  //       : NUMBER_ANIMATION_DURATION,
-  //     useNativeDriver: true,
-  //   }).start();
-  // }, [animatedValue, codeAnimationDuration]);
+  const start = useCallback(() => {
+    Animated.timing(animatedValue, {
+      toValue: 1,
+      duration: codeAnimationDuration
+        ? codeAnimationDuration
+        : NUMBER_ANIMATION_DURATION,
+      useNativeDriver: true,
+    }).start();
+  }, [animatedValue, codeAnimationDuration]);
 
   const startCursor = useCallback(() => {
     Animated.timing(animatedValueCursor, {
@@ -131,47 +131,47 @@ export const InputSingleItem: React.FC<ICodeInputProps> = (
     });
   }, [animatedValueCursor, cursorAnimationDuration]);
 
-  // const resetAnimationAfterDelete = useCallback(() => {
-  //   setAnimatedValueCursor(new Animated.Value(0));
-  //   setAnimatedValue(new Animated.Value(0));
-  // }, []);
+  const resetAnimationAfterDelete = useCallback(() => {
+    setAnimatedValueCursor(new Animated.Value(0));
+    setAnimatedValue(new Animated.Value(0));
+  }, []);
 
-  // useEffect(() => {
-  //   const currentIndex = index ? index : 0;
-  //   const text =
-  //     value.length <= currentIndex ? "" : value.substr(currentIndex, 1);
-  //   if (text.length < textValue.length) {
-  //     resetAnimationAfterDelete();
-  //   }
-  //   setTextValue(text);
+  useEffect(() => {
+    const currentIndex = index ? index : 0;
+    const text =
+      value.length <= currentIndex ? "" : value.substr(currentIndex, 1);
+    if (text.length < textValue.length) {
+      resetAnimationAfterDelete();
+    }
+    setTextValue(text);
 
-  //   if (text.length === 1) {
-  //     setTimeout(
-  //       () => {
-  //         start();
-  //       },
-  //       afterInputDelay ? afterInputDelay : DEFAULT_AFTER_INPUT_DELAY
-  //     );
-  //   }
-  // }, [
-  //   value,
-  //   index,
-  //   afterInputDelay,
-  //   start,
-  //   textValue,
-  //   resetAnimationAfterDelete,
-  // ]);
+    if (text.length === 1) {
+      setTimeout(
+        () => {
+          start();
+        },
+        afterInputDelay ? afterInputDelay : DEFAULT_AFTER_INPUT_DELAY
+      );
+    }
+  }, [
+    value,
+    index,
+    afterInputDelay,
+    start,
+    textValue,
+    resetAnimationAfterDelete,
+  ]);
 
-  // useEffect(() => {
-  //   if (textValue.length === 0) {
-  //     setTimeout(
-  //       () => {
-  //         startCursor();
-  //       },
-  //       afterInputDelay ? afterInputDelay : DEFAULT_AFTER_INPUT_DELAY
-  //     );
-  //   }
-  // }, [textValue, afterInputDelay, startCursor]);
+  useEffect(() => {
+    if (textValue.length === 0) {
+      setTimeout(
+        () => {
+          startCursor();
+        },
+        afterInputDelay ? afterInputDelay : DEFAULT_AFTER_INPUT_DELAY
+      );
+    }
+  }, [textValue, afterInputDelay, startCursor]);
 
   return (
     <View
